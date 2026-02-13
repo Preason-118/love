@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+--primary:#ff6b9d;
+--soft:#ff4757;
+--pale:#ffe5ec;
+}
+
+html,body{
+height:100%;
+overflow:hidden;
+font-family:Segoe UI, sans-serif;
+background:linear-gradient(135deg,#ffeef8,#fff0f5);
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* PHONE */
+.phone-frame{
+width:375px;
+height:667px;
+background:#fff;
+border-radius:40px;
+border:12px solid #333;
+position:relative;
+box-shadow:0 20px 60px rgba(0,0,0,.3);
+overflow:hidden;
+}
+
+/* PAGE CONTAINER */
+.pages-container{
+width:100%;
+height:100%;
+position:relative;
+}
+
+/* PAGE */
+.page{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+padding:40px 25px;
+display:flex;
+flex-direction:column;
+align-items:center;
+background:linear-gradient(180deg,var(--pale),#fff);
+overflow-y:auto;
+-webkit-overflow-scrolling:touch;
+transform:translateX(100%);
+transition:transform .6s cubic-bezier(.77,0,.18,1);
+}
+
+.page.active{transform:translateX(0); z-index:2;}
+.page.previous{transform:translateX(-100%);}
+
+/* TITLE */
+.page-title{font-size:1.8rem; color:var(--primary); font-weight:700; text-align:center; margin-bottom:25px;}
+
+/* BUTTON */
+.btn{
+padding:12px 28px; border:none; border-radius:40px;
+background:linear-gradient(135deg,var(--primary),var(--soft));
+color:#fff; font-weight:700; cursor:pointer; margin-top:20px;
+box-shadow:0 8px 20px rgba(255,107,157,.3);
+transition:.3s;
+}
+.btn:hover{transform:translateY(-3px);}
+
+/* IMAGE */
+.image-circle{width:200px; height:200px; border-radius:50%; overflow:hidden; box-shadow:0 10px 30px rgba(255,107,157,.3); margin-bottom:25px;}
+.image-circle img{width:100%; height:100%; object-fit:cover;}
+
+/* MEMORIES */
+.memories{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; width:100%;}
+.memories img{width:100%; aspect-ratio:1; object-fit:cover; border-radius:12px; box-shadow:0 5px 15px rgba(255,107,157,.2);}
+
+/* YOUTUBE */
+.youtube-thumb{width:100%; aspect-ratio:16/9; border-radius:15px; overflow:hidden; cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,.3);}
+.youtube-thumb img{width:100%; height:100%; object-fit:cover;}
+
+/* ROMANTIC */
+.romantic{margin-top:15px; padding:15px; background:#fff; border-radius:12px; font-style:italic; box-shadow:0 5px 15px rgba(255,107,157,.1); text-align:center;}
+
+/* ENVELOPE */
+.envelope{width:200px; height:120px; background:#fff; border:2px solid var(--primary); border-radius:6px; position:relative; cursor:pointer; box-shadow:0 10px 30px rgba(255,107,157,.3); margin-bottom:15px;}
+.envelope:before{content:'';position:absolute;border-left:100px solid transparent;border-right:100px solid transparent;border-top:60px solid var(--primary);top:0;left:0;transition:.6s;transform-origin:top;}
+.envelope.opened:before{transform:rotateX(180deg);}
+.tap-text{font-size:.9rem;color:var(--primary);font-weight:600;margin-bottom:10px;animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.4;}}
+
+/* LETTER */
+.letter{width:100%; background:#fff; padding:15px; border-radius:10px; box-shadow:0 5px 15px rgba(255,107,157,.1); display:none; text-align:center;}
+.letter.show{display:block;}
+
+/* FINAL */
+.final{font-size:2rem; font-weight:700; color:var(--primary); text-align:center; margin-top:100px;}
+</style>
+</head>
+
+<body>
+
+<!-- Background music -->
+<audio id="bg-music" src="songforher.mp3" autoplay loop></audio>
+
+<div class="phone-frame">
+<div class="pages-container">
+
+<!-- PAGE 1 -->
+<div class="page active">
+<h1 class="page-title">Happy Valentine's Day mero Wifey❤️</h1>
+<div class="image-circle"><img src="sam.jpeg"></div>
+<button class="btn" onclick="nextPage()">Next ➜</button>
+<button class="btn" onclick="playMusic()">Play Music 🎵</button>
+
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+<h2 class="page-title">Memories  with You💕</h2>
+<div class="memories">
+<img src="samu7.jpeg">
+<img src="samu2.jpeg">
+<img src="samu3.jpeg">
+<img src="samu4.jpeg">
+<img src="samu5.jpeg">
+<img src="samu6.jpeg">
+</div>
+<button class="btn" onclick="nextPage()">Next ➜</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+<h2 class="page-title">Our Song 🎶</h2>
+<a class="youtube-thumb" href="https://www.youtube.com/watch?v=S6ZxkZRElg4" target="_blank">
+<img src="https://img.youtube.com/vi/S6ZxkZRElg4/maxresdefault.jpg">
+</a>
+<div class="romantic">
+without any doubt i think this is our song ❤️  
+still remember tmle malai first time yo geet sunauda lyric kasto match garyo vaneko.. bg mani yei geet bajaidinxu aba haha...
+aajkal jaba maile yo geet sunxu automatically tmro face dimagh ma aauxa
+And now yo geet is one of my favourites..❤️
+</div>
+<button class="btn" onclick="nextPage()">Next ➜</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page">
+<h2 class="page-title">Open the Letter 💌</h2>
+<div class="envelope" onclick="openEnvelope()" id="envelope"></div>
+<p class="tap-text">Tap on envelope 💌</p>
+<div class="letter" id="letter">
+<p><strong>Dear Budi,</strong></p>
+<p>From the day you walked into my life, everything quietly changed❤️</p>
+<p>Not just because you are the one I loveee, it’s because you became my comfort, my safe place and my peace in the middle of chaos ❤️</p>
+<p>With you, even silence feels special.. Even ordinary days feel magical  ❤️ </p>
+<p>With you, I don’t have to pretend....I don’t have to hide my flaws or overthink my words...like have told you many times tmy sanga huda little 8 yr old preason hunxu vanerw ❤️</p>
+<p>Sanu tmy mero peace hau on hard days.. Mero happiness hau on normal days and Mero favorite person hau every day❤️</p>
+<p>I will be forever grateful to have you by my side💕💕</p>
+<p>In every life, I hope I am blessed by a woman like you, sanu💕</p>
+<p>You are not just my Valentine.. You are my best memory, my favorite Person, and my forever choice sanu💕tmy bina eek din pani imagine garna sakdinaaa babeee ❤️</p>
+<p>I love you more deeply than I can ever fully explain, mero Pukuliiiiii 💕❤️</p>
+</div>
+<button class="btn" onclick="nextPage()">Next ➜</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+<div class="final">
+I love you soooo much ❤️<br>
+Mero Valentine 💕
+<div class="image-circle"><img src="samu8.jpeg"></div>
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+let currentPage = 0;
+const pages = document.querySelectorAll(".page");
+
+function nextPage(){
+if(currentPage < pages.length - 1){
+pages[currentPage].classList.remove("active");
+pages[currentPage].classList.add("previous");
+currentPage++;
+pages[currentPage].classList.add("active");
+}
+}
+
+function openEnvelope(){
+document.getElementById("envelope").classList.toggle("opened");
+document.getElementById("letter").classList.toggle("show");
+}
+const music = new Audio('songforher.mp3');
+music.loop = true;
+
+function playMusic() {
+    music.play();
+}
+
+
+</script>
+
+</body>
+</html>
